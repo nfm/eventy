@@ -8,9 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Eventy::VERSION
   spec.authors       = ["Nicholas Firth-McCoy"]
   spec.email         = ["nicholas@2suggestions.com.au"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.summary       = "A simple gem for recording user events and actions in-house"
+  spec.homepage      = "https://github.com/nfm/eventy"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
