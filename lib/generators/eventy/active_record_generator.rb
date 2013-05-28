@@ -1,15 +1,15 @@
+require 'rails/generators'
 require 'rails/generators/migration'
-require 'rails/generators/active_record/migration'
 
-module Eventy
-  class ActiveRecordGenerator < Rails::Generators::Base
-    include Rails::Generators::Migration
-    extend ActiveRecord::Generators::Migration
+class Eventy::ActiveRecordGenerator < Rails::Generators::Base
+  include Rails::Generators::Migration
+  source_root File.expand_path('../templates', __FILE__)
 
-    self.source_paths << File.join(File.dirname(__FILE__), 'templates')
+  def self.next_migration_number(path)
+    Time.now.utc.strftime("%Y%m%d%H%M%S")
+  end
 
-    def copy_migration
-      migration_template 'setup_eventy.rb', "db/migrate/setup_eventy.rb"
-    end
+  def copy_migrations
+    migration_template 'setup_eventy.rb', "db/migrate/setup_eventy.rb"
   end
 end
