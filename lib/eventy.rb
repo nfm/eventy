@@ -6,6 +6,8 @@ module Eventy
     case options[:backend].to_sym
     when :active_record
       require "eventy/backends/active_record"
+    when :active_record_hstore
+      require "eventy/backends/active_record_hstore"
     end
   end
 
